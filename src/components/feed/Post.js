@@ -7,24 +7,24 @@ function Post({ displayName, userName, verified, timestamp, text, image, avatar 
   return (
     <div className="post">
       <div className="post-avatar">
-        <Avatar src="https://source.unsplash.com/random/200x200/?img=1" />
+        <Avatar src={avatar} />
       </div>
       <div className="post-body">
         <div className="post-header">
           <div className="post-header-text">
             <h3>
-              Mammimia
+              {displayName}
               <span className="post-header-special">
-                <VerifiedUser className="post-badge" />
-                @mammimia
+                {verified && <VerifiedUser className="post-badge" />}
+                {userName}
               </span>
             </h3>
           </div>
           <div className="post-header-description">
-            <p>Duis eget imperdiet ex, in fringilla velit. Nunc vitae risus eget magna tempus porta eget a odio. </p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="https://source.unsplash.com/random/400x300/?img=1" alt=""></img>
+        <img src={image} alt=""></img>
         <div className="post-footer">
           <ChatBubbleOutline fontSize="small" />
           <Repeat fontSize="small" />
